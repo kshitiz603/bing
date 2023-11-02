@@ -8,18 +8,8 @@ import ast
 from txt import txt
 
 
-
-
-# creating csv file
-filename = "points.csv"
-
-# open csv file to write
-f = open(filename, 'a', newline=' ')
-
-
 # Create a WebDriver instance
 driver = webdriver.Edge()
-
 
 
 driver.get("https://bing.com/search?q=hlo")
@@ -58,16 +48,6 @@ for x in range(1,8):
         driver.find_element(By.XPATH,
                         "/html/body/header/form/div/textarea").clear()
 
-#write in csv
-    driver.refresh()
-    time.sleep(2)
-
-    acc = driver.find_element(By.XPATH,
-                              "/html/body/header/div/a[1]/span[2]").text
-    points = driver.find_element(By.XPATH,
-                                 "/html/body/header/div/a[2]/span[1]").text
-    
-    f.write(str(acc) + " " + str(points) + "\n")
 
 #clear cookies
     #input("enter to delete cookies")
